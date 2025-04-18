@@ -6,7 +6,7 @@ import {
   useWriteContract,
   useWaitForTransactionReceipt,
 } from "wagmi";
-import { parseEther, keccak256, encodePacked } from "viem";
+import { parseEther, sha256, encodePacked } from "viem";
 
 const gameContractABI = [
   {
@@ -315,7 +315,8 @@ const GameInvite = () => {
     try {
       console.log("Playing...");
       // Hash the selected moves
-      const encrMove = keccak256(encodePacked(["string"], [selectedMoves[0]]));
+      const encrMove = sha256(encodePacked(["string"], [selectedMoves[0]]));
+      console.log(encrMove);
 
       const tx = await writeContractAsync({
         address: gameContractAddress,
