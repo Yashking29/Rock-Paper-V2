@@ -7,6 +7,10 @@ import {
   useWaitForTransactionReceipt,
 } from "wagmi";
 import { parseEther, sha256, encodePacked } from "viem";
+import RockImage from  "../public/Images/rock.png";
+import Paper from  "../public/Images/paper.jpeg";
+import Scissor from  "../public/Images/scissor.jpg";
+// import Image from "next/image";
 
 const gameContractABI = [
   {
@@ -255,7 +259,7 @@ const LoaderOverlay = () => (
 const GameInvite = () => {
   const { address, isConnected } = useAccount();
   const [opponentAddress, setOpponentAddress] = useState<string>("");
-  const [selectedMoves, setSelectedMoves] = useState<string[]>([]);
+  const [selectedMoves, setSelectedMoves] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const { writeContractAsync } = useWriteContract();
   const [isLoading, setIsLoading] = useState(false);
@@ -263,7 +267,7 @@ const GameInvite = () => {
   const [played, setPlayed] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
-  const moves: string[] = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+  const moves: string[] = ["Rock", "Paper", "Scissors"];
 
   // Replace the generic sendTransaction with contract interaction
   // const {
@@ -296,10 +300,10 @@ const GameInvite = () => {
   const isInviting = isWritePending || isConfirming;
 
   const handleMoveToggle = (move: string): void => {
-    if (selectedMoves.includes(move)) {
-      setSelectedMoves(selectedMoves.filter((m) => m !== move));
-    } else if (selectedMoves.length < 5) {
-      setSelectedMoves([...selectedMoves, move]);
+    if (selectedMoves==move) {
+      setSelectedMoves("");
+    } else {
+      setSelectedMoves(move);
     }
   };
 
@@ -453,28 +457,44 @@ const GameInvite = () => {
 
               <div className="mb-6">
                 <h3 className="text-lg font-medium mb-2">
-                  Select Your Moves (up to 5)
+                  Select Your Move
                 </h3>
                 <div className="flex flex-wrap justify-center gap-2">
                   {moves.map((move) => (
+                   <div  key={move} className="flex flex-col items-center justify-center">
                     <button
-                      key={move}
-                      onClick={() => handleMoveToggle(move)}
-                      className={`px-3 py-2 rounded ${
-                        selectedMoves.includes(move)
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-200 hover:bg-gray-300"
+                    key={move}
+                    onClick={() => handleMoveToggle(move)}
+                    className={`px-3 py-2 rounded ${
+                      selectedMoves.includes(move)
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-200 hover:bg-gray-300"
+                    } mb-5`}
+                  >
+                    {move}
+                  </button>
+                    <img
+                      src={
+                        move === "Rock"
+                          ? RockImage.src
+                          : move === "Paper"
+                          ? Paper.src
+                          : Scissor.src
+                      }
+                      alt={move}
+                      className={`w-12 h-12 rounded-full transition-transform duration-300 ease-in-out ${
+                        selectedMoves==move ? "opacity-100 bounce" : "opacity-70 bounce-reset"
                       }`}
-                    >
-                      {move}
-                    </button>
+                    />
+                  </div>
+                    
                   ))}
                 </div>
                 <div className="mt-3">
                   <p className="text-sm text-gray-600">
                     Selected:{" "}
                     {selectedMoves.length > 0
-                      ? selectedMoves.join(", ")
+                      ? selectedMoves
                       : "None"}
                   </p>
                 </div>

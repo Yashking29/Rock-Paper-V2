@@ -39,3 +39,25 @@
       transform: rotate(360deg);
    }
 }
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+.bounce-reset {
+  animation: none;
+  transform: translateY(0);
+  transition: transform 0.4s ease-in-out;
+}
+
