@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import "@rainbow-me/rainbowkit/styles.css";
 
@@ -8,6 +8,7 @@ import { createConfig, WagmiProvider, http, createStorage } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { metaMask, injected } from "wagmi/connectors";
 
+
 // For wagmi v2, you need to use createConfig differently
 const projectId = "YOUR_PROJECT_ID"; // Replace with your WalletConnect Cloud project ID
 
@@ -15,18 +16,20 @@ const { wallets } = getDefaultWallets({
   appName: "My DApp",
   projectId,
 });
-
-// Create wagmi config for v2
 const wagmiConfig = createConfig({
-  chains: [localhost, sepolia, mainnet, polygon],
-  transports: {
-    [localhost.id]: http(),
-    [mainnet.id]: http(),
-    [polygon.id]: http(),
-  },
-  connectors: [injected()],
-  storage: createStorage({ storage: localStorage }),
-});
+    chains: [mainnet, polygon, sepolia, localhost],
+    connectors:[injected()],
+    ssr: true,
+    transports: {
+      [mainnet.id]: http(),
+      [polygon.id]: http(),
+      [sepolia.id]: http(),
+      [localhost.id]: http(),
+    },
+    storage: typeof window !== 'undefined'
+      ? createStorage({ storage: window.localStorage })
+      : undefined,
+  });
 
 // Create query client for react-query
 const queryClient = new QueryClient();
