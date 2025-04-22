@@ -28,214 +28,214 @@ import EthValueSelector from "@/components/EthValueSelector";
 // import Image from "next/image";
 
 const gameContractABI = [
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_c1",
-				"type": "uint8"
-			},
-			{
-				"name": "_c2",
-				"type": "uint8"
-			}
-		],
-		"name": "win",
-		"outputs": [
-			{
-				"name": "w",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "j2Timeout",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "stake",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "c2",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "c1Hash",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_c2",
-				"type": "uint8"
-			}
-		],
-		"name": "play",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "j2",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "lastAction",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_c1",
-				"type": "uint8"
-			},
-			{
-				"name": "_salt",
-				"type": "uint256"
-			}
-		],
-		"name": "solve",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "j1",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "j1Timeout",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "TIMEOUT",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"name": "_c1Hash",
-				"type": "bytes32"
-			},
-			{
-				"name": "_j2",
-				"type": "address"
-			}
-		],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "gameAddress",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"name": "player1",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"name": "player2",
-				"type": "address"
-			}
-		],
-		"name": "GameCreated",
-		"type": "event"
-	}
+  {
+    constant: true,
+    inputs: [
+      {
+        name: "_c1",
+        type: "uint8",
+      },
+      {
+        name: "_c2",
+        type: "uint8",
+      },
+    ],
+    name: "win",
+    outputs: [
+      {
+        name: "w",
+        type: "bool",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: "j2Timeout",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "stake",
+    outputs: [
+      {
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "c2",
+    outputs: [
+      {
+        name: "",
+        type: "uint8",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "c1Hash",
+    outputs: [
+      {
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "_c2",
+        type: "uint8",
+      },
+    ],
+    name: "play",
+    outputs: [],
+    payable: true,
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "j2",
+    outputs: [
+      {
+        name: "",
+        type: "address",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "lastAction",
+    outputs: [
+      {
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "_c1",
+        type: "uint8",
+      },
+      {
+        name: "_salt",
+        type: "uint256",
+      },
+    ],
+    name: "solve",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "j1",
+    outputs: [
+      {
+        name: "",
+        type: "address",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: "j1Timeout",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "TIMEOUT",
+    outputs: [
+      {
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        name: "_c1Hash",
+        type: "bytes32",
+      },
+      {
+        name: "_j2",
+        type: "address",
+      },
+    ],
+    payable: true,
+    stateMutability: "payable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        name: "gameAddress",
+        type: "address",
+      },
+      {
+        indexed: true,
+        name: "player1",
+        type: "address",
+      },
+      {
+        indexed: true,
+        name: "player2",
+        type: "address",
+      },
+    ],
+    name: "GameCreated",
+    type: "event",
+  },
 ];
 const moveMap = {
   Rock: 1,
@@ -311,7 +311,7 @@ const GameInvite = () => {
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [sendInvite, setSendInvite] = useState(false);
   const [showRevealModal, setShowRevealModal] = useState(false);
-  const [value,onValueChange] = useState(0.01);
+  const [value, onValueChange] = useState(0.01);
 
   useEffect(() => {
     // This will run only on the client side
@@ -404,7 +404,7 @@ const GameInvite = () => {
         abi: gameContractABI,
         functionName: "play",
         args: [moveMap[selectedMoves]],
-        value: parseEther("0.002"), // Replace with the actual value
+        value: parseEther("0.01"), // Replace with the actual value
       });
       setPlayed(true);
     } catch (error: any) {
@@ -433,13 +433,11 @@ const GameInvite = () => {
     try {
       console.log("Registering...");
       // Call the `register` function on the smart contract
-      const passPhraseHash = sha256(
-        encodePacked(["string"], [passPhrase])
-      );
+      const passPhraseHash = sha256(encodePacked(["string"], [passPhrase]));
       const encrMove = keccak256(
         encodePacked(
-          ['uint8', 'uint256'], // data types must match exactly
-          [moveMap[selectedMoves], passPhraseHash]   // ensure salt is BigInt
+          ["uint8", "uint256"], // data types must match exactly
+          [moveMap[selectedMoves], passPhraseHash] // ensure salt is BigInt
         )
       );
       console.log(encrMove);
@@ -486,9 +484,7 @@ const GameInvite = () => {
       console.log("Pass Phrase:", passPhrase);
       console.log("Game Contract Address:", gameContractAddress);
 
-      const passPhraseHash = sha256(
-        encodePacked(["string"], [passPhrase])
-      );
+      const passPhraseHash = sha256(encodePacked(["string"], [passPhrase]));
 
       const tx = await writeContractAsync({
         address: gameContractAddress,
@@ -515,7 +511,7 @@ const GameInvite = () => {
       setIsLoading(false);
     }
   };
-  
+
   const handleOpenInvite = () => {
     if (!selectedMoves) {
       setErrorMessage("Please select a move.");
@@ -526,7 +522,7 @@ const GameInvite = () => {
   };
 
   const handleTimeOut = async () => {
-    if(!gameContractAddress) {
+    if (!gameContractAddress) {
       setErrorMessage("No game contract address found.");
       return;
     }
@@ -535,7 +531,7 @@ const GameInvite = () => {
     try {
       console.log("Timeout...");
       let functionName = "j2Timeout";
-      if (sendInvite) {
+      if (incomingGame && incomingGame.player2 === address) {
         functionName = "j1Timeout";
       }
       // Call the `register` function on the smart contract
@@ -573,7 +569,11 @@ const GameInvite = () => {
         </div>
 
         {/* Registration & Clock */}
-        <div className="mb-6 flex justify-center items-center">
+        <div className="mb-6 flex flex-col justify-center items-center">
+          {incomingGame && incomingGame.player1 == address && (
+           
+            <p className="text-green-300 text-center mb-2">Invite Send Successfully to <br/> {incomingGame.player2}</p>
+          )}
           {isConnected && !isClockRunning && (
             <button
               onClick={handleOpenInvite}
@@ -582,6 +582,7 @@ const GameInvite = () => {
               Invite
             </button>
           )}
+
           {isClockRunning && <Clock isRunning={isClockRunning} />}
         </div>
         {showInviteModal && (
@@ -604,7 +605,7 @@ const GameInvite = () => {
               {/* Content */}
               <div className="p-6">
                 {/* Opponent Address Input */}
-                <EthValueSelector onValueChange={onValueChange}/>
+                <EthValueSelector onValueChange={onValueChange} />
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Opponent's Address
@@ -757,7 +758,7 @@ const GameInvite = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-3 justify-center mt-6">
-              {incomingGame && (
+              {incomingGame && incomingGame.player2 == address && (
                 <button
                   onClick={handlePlay}
                   // disabled={!registered || played}
